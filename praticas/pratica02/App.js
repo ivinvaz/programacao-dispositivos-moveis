@@ -9,13 +9,12 @@ function AppBar(props) {
 }
 function App() {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, paddingTop: 30}}>
         <AppBar titulo="Minha Aplicação React Native" />
     <View style={styles.container}></View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
