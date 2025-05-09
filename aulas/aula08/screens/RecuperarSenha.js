@@ -1,9 +1,11 @@
-import { HelperText, TextInput } from "react-native-paper";
-import { View, useState } from "react-native";
+import { useState } from "react";
+import { View } from "react-native";
+import { TextInput, Button, HelperText } from "react-native-paper";
 
-function RecuperarSenha() {
+function RedefinirSenha() {
   const [email, setEmail] = useState("");
   const [erro, setErro] = useState("");
+
   const validaEmail = () => {
     if (!email) {
       setErro("E-mail é obrigatorio");
@@ -21,7 +23,7 @@ function RecuperarSenha() {
   const trataTexto = (texto) => {
     setEmail(texto);
     validaEmail();
-  };
+  }
 
   const trataEnviar = () => {
     if (!validaEmail()) {
@@ -53,4 +55,4 @@ function RecuperarSenha() {
   );
 }
 
-export default RecuperarSenha;
+export default RedefinirSenha;
