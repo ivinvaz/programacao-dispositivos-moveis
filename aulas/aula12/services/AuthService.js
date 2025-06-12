@@ -7,6 +7,10 @@ async function signIn(credenciais){
     try{
         const response = await axios.post(`${API_URL}:signInWithPassword?key=${API_KEY}`, {...credenciais, returnSecureToken: true});
     }catch(error){
+        const { message } = error.response.data.error;
+        if (message == "INVALID_LOGIN_CREDENTIALS"){
+            throw new Error("Usuário/Senha inválidos")
+        }
         throw error;
     }
 }
